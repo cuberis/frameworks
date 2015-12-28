@@ -1,0 +1,33 @@
+include ../universals/universals
+block page-variables
+doctype html
+html
+  head
+    title
+      block page-title
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    if (true === noIndex)
+      meta(name="robots", content="noindex, nofollow")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,900", rel="stylesheet", type="text/css")
+    link(href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic", rel="stylesheet", type="text/css")
+    link(href="/css/site.min.css", rel="stylesheet", type="text/css" media="screen")
+    script(src="//ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js")
+    script.
+        window.jQuery || document.write('<script src="/js/libraries/jquery-2.1.4.min.js">\x3C/script>')
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/site.min.js")
+  body
+  
+    //- include svg master for symbol reference
+    include ../jade/svg/svg-master
+    
+    //- main header
+    include ../content/main-header
+    
+    //- page content block
+    block page-content
+    
+    //- main footer
+    include ../content/main-footer
